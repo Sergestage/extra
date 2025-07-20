@@ -1,0 +1,11 @@
+function firstNegative(nums) {
+ for(let i = 0; i < nums.length; i++) {
+  if(nums[i] < 0) {
+    return nums[i];
+  }
+  }
+ return null;
+}
+
+console.log(firstNegative([3, 5, -2, 4]));
+console.log(firstNegative([1, 2, 3]));
