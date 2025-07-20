@@ -1,0 +1,13 @@
+function maxProductOf3(nums) {
+  let maxProduct = 0;
+  for(let i = 0; i < nums.length - 2; i++) {
+   let product = nums[i] * nums[i + 1] * nums[i + 2];
+   if(product > maxProduct) {
+   maxProduct = product;
+    }
+  }
+ return maxProduct;
+}
+
+let numbers = [1, 5, 3, 7, 2, 8, 4];
+console.log(maxProductOf3(numbers));
