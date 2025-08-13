@@ -1,0 +1,18 @@
+function compress(arr) {
+ let result = [];
+  let count = 1;
+
+   for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === arr[i + 1]) {
+       count++;
+     } else {
+       result.push([arr[i], count]);
+      count = 1;
+    }
+   }
+
+return result;
+}
+
+let data = ["a", "a", "b", "b", "b", "c"];
+console.log(compress(data));
