@@ -1,0 +1,56 @@
+function checkSudoku(board) {
+  for (let i = 0; i < 9; i++) {
+     let rowSet = new Set();
+     let colSet = new Set();
+   for (let j = 0; j < 9; j++) {
+     let rowVal = board[i][j];
+     let colVal = board[j][i];
+
+      if (rowVal !== 0) {
+        if (rowSet.has(rowVal)) {
+             return false;
+        }
+          rowSet.add(rowVal);
+      }
+
+        if (colVal !== 0) {
+          if (colSet.has(colVal)) {
+            return false;
+        }
+         colSet.add(colVal);
+}
+}
+}
+   return true;
+}
+
+const array1 = [
+  [5,3,0, 0,7,0, 0,0,0],
+  [6,0,0, 1,9,5, 0,0,0],
+  [0,9,8, 0,0,0, 0,6,0],
+
+  [8,0,0, 0,6,0, 0,0,3],
+  [4,0,0, 8,0,3, 0,0,1],
+  [7,0,0, 0,2,0, 0,0,6],
+
+  [0,6,0, 0,0,0, 2,8,0],
+  [0,0,0, 4,1,9, 0,0,5],
+  [0,0,0, 0,8,0, 0,7,9]
+];
+
+const array2 = [
+  [0,0,0, 0,0,0, 0,1,2],
+  [0,0,0, 0,0,0, 0,3,4],
+  [0,0,0, 0,0,0, 0,5,6],
+
+  [0,0,0, 0,0,0, 0,7,8],
+  [0,0,0, 0,0,0, 0,9,1],
+  [0,0,0, 0,0,0, 0,2,3],
+
+  [0,0,0, 0,0,0, 0,4,5],
+  [0,0,0, 0,0,0, 0,6,7],
+  [0,0,0, 0,0,0, 0,8,9]
+];
+
+console.log(checkSudoku(array1));
+console.log(checkSudoku(array2));
